@@ -130,3 +130,7 @@ dmypy.json
 
 .idea
 standards/
+standards.1/
+standards.bak/
+failed_downloads.json
+failed_downloads.json.tmp

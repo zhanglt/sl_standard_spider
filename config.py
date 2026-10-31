@@ -1,4 +1,5 @@
 import os
+import logging
 import re
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -33,7 +34,7 @@ def get_pdf_file_path(code: str, name: str, is_from_swf: bool = False) -> str:
 def is_file_downloaded(code: str, name: str) -> bool:
     for ft in [False, True]:
         target_path = get_pdf_file_path(code, name, is_from_swf=ft)
-        if os.path.exists(target_path):
-            print('已下载规范，跳过 -> %s' % target_path)
+        if os.path.isfile(target_path) and os.path.getsize(target_path) > 0:
+            logging.info('已下载规范，跳过 -> %s', target_path)
             return True
     return False
