@@ -6,10 +6,14 @@
 公开的水利行业标准电子文档。
 
 ## 方法
+os: Ubuntu22
+Python: 3.10.22
 
 在项目目录运行：
 
 ```bash
+pip install -r ./requirements.txt
+
 python run.py
 ```
 
